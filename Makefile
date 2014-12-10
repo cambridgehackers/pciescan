@@ -2,6 +2,7 @@
 PREFIX?=/usr/local/bin
 
 all:
+	sed -i s_/usr/local/bin_$(DESTDIR)_ pciescanportal.c
 	gcc -o pciescanportal pciescanportal.c
 
 install: all
