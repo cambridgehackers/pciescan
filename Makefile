@@ -1,9 +1,9 @@
 
+PREFIX?=/usr/local/bin
+
 all:
 	gcc -o pciescanportal pciescanportal.c
 
 install: all
-	cp pciescanportal pciescan.sh /usr/local/bin/
-	chown root:root /usr/local/bin/pciescanportal
-	# setuid on pciescanportal, so that it can exec pciescan.sh
-	chmod 7555 /usr/local/bin/pciescanportal
+	install -D -o root -g root -m4755 pciescanportal $(DESTDIR)$(PREFIX)
+	install -D -o root -g root -m755 pciescan.sh $(DESTDIR)$(PREFIX)
