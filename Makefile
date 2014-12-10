@@ -5,8 +5,8 @@ all:
 	gcc -o pciescanportal pciescanportal.c
 
 install: all
-	install -D -o root -g root -m4755 pciescanportal $(DESTDIR)$(PREFIX)/pciescanportal
-	install -D -o root -g root -m755 pciescan.sh $(DESTDIR)$(PREFIX)/pciescan.sh
+	install -D -m4755 pciescanportal $(DESTDIR)$(PREFIX)/pciescanportal
+	install -D -m755 pciescan.sh $(DESTDIR)$(PREFIX)/pciescan.sh
 
 dpkg:
 	git clean -fdx
