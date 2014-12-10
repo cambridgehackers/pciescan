@@ -6,6 +6,6 @@
 int main()
 {
    setuid( 0 );
-   system( "/usr/local/bin/pciescan.sh" );
+   system( "/pciescan.sh" );
    return 0;
 }
