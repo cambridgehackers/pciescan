@@ -8,6 +8,12 @@
 
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
+#export DH_OPTIONS="-X pciescanportal"
 
 %:
+	echo $@
 	dh $@ 
+
+override_dh_fixperms:
+	echo dh_fixperms
+	dh_fixperms -Xpciescanportal
