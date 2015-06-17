@@ -10,7 +10,7 @@ install: all
 
 dpkg:
 	git clean -fdx
-	git buildpackage --git-upstream-branch=master --git-debian-branch=ubuntu/trusty --git-ignore-new -tc -us -uc
+	git buildpackage --git-upstream-branch=master --git-debian-branch=ubuntu/ --git-upstream-tag='v%(version)s' --git-ignore-new -tc -us -uc
 
 spkg:
 	git clean -fdx
