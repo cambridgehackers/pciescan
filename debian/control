@@ -11,5 +11,5 @@ Package: pciescan
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Rescan PCIe FPGA after programming.
- Rescan PCIe FPGA after programming.
+ So that rebooting is not required.
  .
