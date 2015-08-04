@@ -18,7 +18,7 @@ spkg:
 	git buildpackage --git-upstream-branch=master --git-debian-branch=ubuntu --git-upstream-tag='v%(version)s' --git-ignore-new -tc -S
 	sed -i s/trusty/precise/g debian/changelog
 	git buildpackage --git-upstream-branch=master --git-debian-branch=ubuntu --git-upstream-tag='v%(version)s' --git-ignore-new -tc -S
-	sed -i s/precise/utopic/g debian/changelog
+	sed -i s/precise/stable/g debian/changelog
 	git buildpackage --git-upstream-branch=master --git-debian-branch=ubuntu --git-upstream-tag='v%(version)s' --git-ignore-new -tc -S
 	git checkout debian
 	sed -i s/trusty/vivid/g debian/changelog
@@ -28,8 +28,10 @@ spkg:
 
 upload:
 	git push origin v$(VERSION)
-	dput ppa:jamey-hicks/connectal ../pciescan_$(VERSION)-*_source.changes
+	ls ../pciescan_$(VERSION)-*_source.changes
 	(cd  ../obs/home:jameyhicks:connectaldeb/pciescan/; osc rm * || true)
-	cp -v ../pciescan_$(VERSION)*trusty*.diff.gz ../pciescan_$(VERSION)*trusty*.dsc ../pciescan_$(VERSION)*.orig.tar.gz ../obs/home:jameyhicks:connectaldeb/pciescan/
+	cp -v ../pciescan_$(VERSION)*stable*.diff.gz ../pciescan_$(VERSION)*stable*.dsc ../pciescan_$(VERSION)*.orig.tar.gz ../obs/home:jameyhicks:connectaldeb/pciescan/
+	rm -f ../pciescan_$(VERSION)*stable*
+	dput ppa:jamey-hicks/connectal ../pciescan_$(VERSION)-*_source.changes
 	(cd ../obs/home:jameyhicks:connectaldeb/pciescan/; osc add *; osc commit -m $(VERSION) )
-	(cd ../obs/home:jameyhicks:connectal/pciescan; sed -i "s/>v.....</>v$(VERSION)</" _service; osc commit -m "v$(VERSION)" )
+	#(cd ../obs/home:jameyhicks:connectal/pciescan; sed -i "s/>v.....</>v$(VERSION)</" _service; osc commit -m "v$(VERSION)" )
