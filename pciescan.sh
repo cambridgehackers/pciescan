@@ -10,6 +10,9 @@ fi
 # remove existing driver, since there is some bug in the 'remove'
 # function, causing the driver to become unmapped although
 # it is still registered (and causing a segv on the probe call)
+sleep 1
 rmmod pcieportal
+sleep 1
 sh -c "echo 1 >/sys/bus/pci/rescan"
+sleep 1
 #lspci -vv -d 1be7:c100
