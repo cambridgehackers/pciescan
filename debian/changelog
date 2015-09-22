@@ -1,3 +1,9 @@
+pciescan (15.09.1-1trusty1) trusty; urgency=medium
+
+  * 15.09.1: added sleep 1 in pciescan.sh to get udev time to react 
+
+ -- Jamey Hicks <jamey.hicks@gmail.com>  Tue, 22 Sep 2015 19:46:17 -0400
+
 pciescan (15.06.1-3trusty3) trusty; urgency=medium
 
   * Revised summary to avoid lintian error.
