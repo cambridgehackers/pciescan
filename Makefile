@@ -1,5 +1,5 @@
 
-PREFIX?=/usr/bin
+PREFIX?=/usr/local/bin
 
 all:
 	gcc -o pciescanportal pciescanportal.c
