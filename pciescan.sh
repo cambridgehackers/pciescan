@@ -14,7 +14,7 @@ done
 # it is still registered (and causing a segv on the probe call)
 sleep 1
 (lsmod | grep -q pcieportal) && rmmod pcieportal
-(lsmod | grep -q bluenoc) && rmmod pcieportal
+(lsmod | grep -q bluenoc) && rmmod bluenoc
 sleep 1
 sh -c "echo 1 >/sys/bus/pci/rescan"
 sleep 1
