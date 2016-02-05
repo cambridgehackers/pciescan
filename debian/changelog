@@ -1,3 +1,9 @@
+pciescan (16.02.3-1trusty1) trusty; urgency=medium
+
+  * rmmod bluenoc driver if it is loaded
+
+ -- Jamey Hicks <jamey.hicks@gmail.com>  Fri, 05 Feb 2016 15:12:22 -0500
+
 pciescan (16.02.2-1trusty1) trusty; urgency=medium
 
   * added support to rescan bluenoc FPGAs
