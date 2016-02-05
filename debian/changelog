@@ -1,3 +1,9 @@
+pciescan (16.02.2-1trusty1) trusty; urgency=medium
+
+  * added support to rescan bluenoc FPGAs
+
+ -- Jamey Hicks <jamey.hicks@gmail.com>  Fri, 05 Feb 2016 12:16:59 -0500
+
 pciescan (15.09.1-1trusty1) trusty; urgency=medium
 
   * 15.09.1: added sleep 1 in pciescan.sh to get udev time to react 
