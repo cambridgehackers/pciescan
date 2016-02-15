@@ -1,3 +1,9 @@
+pciescan (16.02.3-2trusty2) trusty; urgency=medium
+
+  * Fixed Makefile to install into /usr
+
+ -- Jamey Hicks <jamey.hicks@gmail.com>  Mon, 15 Feb 2016 12:29:27 -0500
+
 pciescan (16.02.3-1trusty1) trusty; urgency=medium
 
   * rmmod bluenoc driver if it is loaded
