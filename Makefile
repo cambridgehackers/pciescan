@@ -21,7 +21,7 @@ spkg:
 	sed -i s/precise/stable/g debian/changelog
 	git buildpackage --git-upstream-branch=master --git-debian-branch=ubuntu --git-upstream-tag='v%(version)s' --git-ignore-new -tc -S
 	git checkout debian
-	sed -i s/trusty/vivid/g debian/changelog
+	sed -i s/trusty/xenial/g debian/changelog
 	git buildpackage --git-upstream-branch=master --git-debian-branch=ubuntu --git-upstream-tag='v%(version)s' --git-ignore-new -tc -S
 	git clean -fdx
 	git checkout debian
