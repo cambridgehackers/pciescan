@@ -3,10 +3,9 @@ set -x
 PATH=$PATH:/sbin
 # invalidate existing device (so that scan will look for new one)
 for devid in 1be7:c100 1be7:b100; do
-    BLUEDEVICE=`lspci -d $devid | sed -e "s/ .*//"`
-    if [ "$BLUEDEVICE" != "" ]; then
+    for BLUEDEVICE in `lspci -d $devid | sed -e "s/ .*//"`; do
         sh -c "echo 1 >/sys/bus/pci/devices/0000:$BLUEDEVICE/remove"
-    fi
+    done
 done
 #sh -c "echo 1 >/sys/bus/pci/devices/0000:01:00.0/remove"
 # remove existing driver, since there is some bug in the 'remove'
